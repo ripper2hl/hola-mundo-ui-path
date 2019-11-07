@@ -8,7 +8,7 @@ node {
     }
 
     stage ('construccion'){
-      UiPathPack (outputPath: "${env.JENKINS_HOME}\\jobs\\${env.JOB_NAME}\\builds\\${env.BUILD_NUMBER}", projectJsonPath: "${env.WORKSPACE}", version: [$class: 'ManualEntry', text: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"])
+      UiPathPack (outputPath: "${env.JENKINS_HOME}\\jobs\\${env.JOB_NAME}\\builds\\${env.BUILD_NUMBER}", projectJsonPath: "${env.WORKSPACE}", version: [$class: 'ManualEntry', text: "1.0.${env.BUILD_NUMBER}"])
     }
 
  }
