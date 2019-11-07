@@ -8,7 +8,7 @@ node("windows-slave") {
     }
 
     stage ('construccion'){
-      UiPathPack (outputPath: "${env.JENKINS_HOME}\\jobs\\${env.JOB_NAME}\\builds\\${env.BUILD_NUMBER}", projectJsonPath: "${env.WORKSPACE}", version: [$class: 'ManualEntry', text: "1.0.${env.BUILD_NUMBER}"])
+      UiPathPack outputPath: '${JENKINS_HOME}\\jobs\\${JOB_NAME}\\builds\\${BUILD_NUMBER}', projectJsonPath: '${WORKSPACE}', version: AutoVersion()
     }
 
     stage ('archivar'){
