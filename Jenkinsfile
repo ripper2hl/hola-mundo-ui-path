@@ -1,5 +1,5 @@
 #!groovy
-node {
+node("windows-slave") {
 
     stage ('obtener fuentes'){
             echo 'Descargando código de SCM';
