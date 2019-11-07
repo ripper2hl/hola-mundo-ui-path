@@ -14,7 +14,8 @@ node("windows-slave") {
     }
 
     stage ('archivar'){
-      bat label: '', script: "dir  C:\\jenkins\\jobs\\${projectName}\\${BRANCH_NAME}\\builds\\${env.BUILD_NUMBER}";
+      bat label: '', script: "dir C:\\jenkins\\jobs\\${projectName}\\${BRANCH_NAME}\\builds\\${env.BUILD_NUMBER}";
+      step([$class: 'ArtifactArchiver', artifacts: "C:\\jenkins\\jobs\\${projectName}\\${BRANCH_NAME}\\builds\\${env.BUILD_NUMBER}\\*.nupkg", fingerprint: true]);
     }
 
  }
