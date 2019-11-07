@@ -12,7 +12,7 @@ node("windows-slave") {
     }
 
     stage ('archivar'){
-      sh "ls  ${env.JENKINS_HOME}\\jobs\\${env.JOB_NAME}\\builds\\${env.BUILD_NUMBER}"
+      bat label: '', script: "ls  C:\\jenkins\\jobs\\${env.JOB_NAME}\\builds\\${env.BUILD_NUMBER}";
     }
 
  }
