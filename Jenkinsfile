@@ -8,7 +8,7 @@ node("windows-slave") {
     }
 
     stage ('construccion'){
-      bat label: '', script: "C:\\Users\\vagrant\\AppData\\Local\\UiPath\\app-19.9.2\\UiRobot.exe -pack ${env.WORKSPACE}\\project.json -o ${env.JENKINS_HOME}\\jobs\\${env.JOB_NAME}\\builds\\${env.BUILD_NUMBER}";
+      bat label: '', script: "C:\\Users\\vagrant\\AppData\\Local\\UiPath\\app-19.9.2\\UiRobot.exe -pack ${env.WORKSPACE}\\project.json -o C:\\jobs\\${env.JOB_NAME}\\builds\\${env.BUILD_NUMBER}";
     }
 
     stage ('archivar'){
