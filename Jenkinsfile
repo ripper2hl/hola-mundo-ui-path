@@ -14,8 +14,6 @@ node("windows-slave") {
     }
 
     stage ('archivar'){
-      def allJob = env.JOB_NAME.tokenize('/') as String[];
-      def projectName = allJob[0];
       bat label: '', script: "dir  C:\\jenkins\\jobs\\${projectName}\\${BRANCH_NAME}\\builds\\${env.BUILD_NUMBER}";
     }
 
