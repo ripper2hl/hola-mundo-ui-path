@@ -12,7 +12,9 @@ node("windows-slave") {
     }
 
     stage ('archivar'){
-      bat label: '', script: "dir  C:\\jenkins\\jobs\\${env.JOB_BASE_NAME}\\${BRANCH_NAME}\\builds\\${env.BUILD_NUMBER}";
+      def allJob = env.JOB_NAME.tokenize('/') as String[];
+      def projectName = allJob[1];
+      bat label: '', script: "dir  C:\\jenkins\\jobs\\${projectName}\\${BRANCH_NAME}\\builds\\${env.BUILD_NUMBER}";
     }
 
  }
