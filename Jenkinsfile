@@ -11,7 +11,7 @@ node("windows-slave") {
     }
 
     stage ('construccion'){
-      bat label: '', script: "mkdir -p ${buildPath}";
+      bat label: '', script: "mkdir ${buildPath}";
       bat label: '', script: "C:\\Users\\vagrant\\AppData\\Local\\UiPath\\app-19.9.2\\UiRobot.exe -pack ${env.WORKSPACE}\\project.json -o ${buildPath}";
     }
 
